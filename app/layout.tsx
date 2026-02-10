@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Roboto } from 'next/font/google';
 import "./globals.css";
@@ -44,7 +44,6 @@ export const metadata: Metadata = {
   },
   description: "Swap YouTube comments and related videos, resize columns, and enhance your viewing experience with this powerful Chrome extension.",
   keywords: ["YouTube", "layout", "extension", "comments", "sidebar", "customize", "chrome extension", "dark mode"],
-  themeColor: '#0f0f0f',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
@@ -53,16 +52,18 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: false
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-  },
   robots: {
     index: true,
     follow: true,
   }
+};
+
+export const viewport: Viewport = {
+  themeColor: '#0f0f0f',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({
@@ -77,7 +78,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <meta name="theme-color" content="#0f0f0f" />
+
       </head>
       <body className="bg-[#0f0f0f] text-[#f1f1f1] antialiased selection:bg-[#3ea6ff]/30 selection:text-white">
         {children}
