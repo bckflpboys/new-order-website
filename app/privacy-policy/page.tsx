@@ -1,44 +1,42 @@
-import React from 'react';
-import HeaderWrapper from '../components/HeaderWrapper';
-import Footer from '../components/Footer';
-import PromoPopup from '../components/PromoPopup';
+'use client';
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'iconify-icon': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
-        icon: string;
-        width?: string;
-        'stroke-width'?: string;
-        fill?: string;
-      };
-    }
-  }
-}
+import React from 'react';
+import Link from 'next/link';
+
+
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="bg-black min-h-screen">
-      <HeaderWrapper />
+    <main className="bg-[#0f0f0f] min-h-screen text-[#f1f1f1]">
+      {/* Header */}
+      <nav className="border-b border-[#303030] bg-[#0f0f0f]/80 backdrop-blur-md sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#FF0000] to-[#cc0000] flex items-center justify-center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-7.6 11.31v-5.003l5.067 2.483-5.067 2.52z" fill="white" />
+              </svg>
+            </div>
+            <span className="font-bold text-lg tracking-tight">YouTube New Order</span>
+          </Link>
+        </div>
+      </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-44 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-grid z-0 mask-image-gradient pointer-events-none"></div>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#C39EFF]/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
-
+      <section className="relative pt-24 pb-12 overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B2FFD6]/10 border border-[#B2FFD6]/20 text-xs font-medium text-[#B2FFD6] mb-6 uppercase tracking-wider">
-              <iconify-icon icon="lucide:shield-check" width="12"></iconify-icon>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1f1f1f] border border-[#303030] text-xs font-medium text-[#aaaaaa] mb-6 uppercase tracking-wider">
+              <iconify-icon icon="mdi:shield-check" width="12"></iconify-icon>
               Your Privacy Matters
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
-              Privacy <span className="text-[#C39EFF] drop-shadow-[0_0_8px_rgba(195,158,255,0.5)]">Policy</span>
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6">
+              Privacy <span className="text-[#FF0000]">Policy</span>
             </h1>
 
-            <p className="text-lg text-[#B2FFD6] max-w-2xl mx-auto leading-relaxed">
-              Last Updated: December 29, 2025
+            <p className="text-lg text-[#aaaaaa] max-w-2xl mx-auto leading-relaxed">
+              Last Updated: February 10, 2026
             </p>
           </div>
         </div>
@@ -47,16 +45,16 @@ export default function PrivacyPolicyPage() {
       {/* Content Section */}
       <section className="py-12 relative">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="bg-[#0F0E17] rounded-xl border border-white/10 p-8 md:p-12 space-y-8">
+          <div className="bg-[#1f1f1f] rounded-xl border border-[#303030] p-8 md:p-12 space-y-8">
 
             {/* Introduction */}
             <div>
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <iconify-icon icon="lucide:info" width="24" className="text-[#C39EFF]"></iconify-icon>
+                <iconify-icon icon="mdi:information-outline" width="24" className="text-[#FF0000]" style={{ marginRight: '8px' }}></iconify-icon>
                 Introduction
               </h2>
-              <p className="text-slate-300 leading-relaxed">
-                Movie Rating Pro (&quot;we&quot;, &quot;our&quot;, or &quot;the extension&quot;) is committed to protecting your privacy.
+              <p className="text-[#aaaaaa] leading-relaxed">
+                YouTube New Order ("we", "our", or "the extension") is committed to protecting your privacy.
                 This Privacy Policy explains how we handle your information when you use our Chrome browser extension.
               </p>
             </div>
@@ -64,247 +62,93 @@ export default function PrivacyPolicyPage() {
             {/* Data Collection */}
             <div>
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <iconify-icon icon="lucide:database" width="24" className="text-[#C39EFF]"></iconify-icon>
+                <iconify-icon icon="mdi:database-off" width="24" className="text-[#FF0000]" style={{ marginRight: '8px' }}></iconify-icon>
                 Data Collection
               </h2>
               <div className="space-y-4">
-                <div className="p-4 rounded-lg bg-[#111019] border border-emerald-500/20">
-                  <h3 className="text-lg font-semibold text-emerald-400 mb-2 flex items-center gap-2">
-                    <iconify-icon icon="lucide:check-circle" width="18"></iconify-icon>
-                    What We DO Collect
+                <div className="p-4 rounded-lg bg-[#0f0f0f] border border-[#303030]">
+                  <h3 className="text-lg font-semibold text-white mb-2 flex items-center gap-2">
+                    We Collect <span className="text-[#FF0000]">Nothing</span>
                   </h3>
-                  <ul className="space-y-2 text-slate-300 text-sm">
+                  <p className="text-[#aaaaaa] text-sm">
+                    We do not collect, store, or transmit any personal data selected to an external server. We do not track your browsing history outside of YouTube, and we do not sell your data.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-lg bg-[#0f0f0f] border border-[#303030]">
+                  <h3 className="text-lg font-semibold text-white mb-2 flex items-center gap-2">
+                    Local Storage
+                  </h3>
+                  <ul className="space-y-2 text-[#aaaaaa] text-sm">
                     <li className="flex items-start gap-2">
-                      <iconify-icon icon="lucide:dot" width="16" className="text-[#B2FFD6] mt-1"></iconify-icon>
-                      <span><strong>Movie ratings and reviews:</strong> All ratings, scores, and custom fields you create are stored locally on your device.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <iconify-icon icon="lucide:dot" width="16" className="text-[#B2FFD6] mt-1"></iconify-icon>
-                      <span><strong>Extension settings:</strong> Your preferences and configuration settings are stored locally.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <iconify-icon icon="lucide:dot" width="16" className="text-[#B2FFD6] mt-1"></iconify-icon>
-                      <span><strong>Movie titles:</strong> Automatically detected movie titles from supported platforms (stored locally only).</span>
+                      <iconify-icon icon="mdi:circle-small" width="24" className="text-[#FF0000]"></iconify-icon>
+                      <span><strong>Settings & Preferences:</strong> Your layout preferences (e.g., "Comments on Right", "Dark Mode") are stored locally on your device using `chrome.storage.local`.</span>
                     </li>
                   </ul>
                 </div>
-
-                <div className="p-4 rounded-lg bg-[#111019] border border-red-500/20">
-                  <h3 className="text-lg font-semibold text-red-400 mb-2 flex items-center gap-2">
-                    <iconify-icon icon="lucide:x-circle" width="18"></iconify-icon>
-                    What We DO NOT Collect
-                  </h3>
-                  <ul className="space-y-2 text-slate-300 text-sm">
-                    <li className="flex items-start gap-2">
-                      <iconify-icon icon="lucide:dot" width="16" className="text-red-400 mt-1"></iconify-icon>
-                      <span><strong>Personal information:</strong> We do not collect names, email addresses, or any personally identifiable information.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <iconify-icon icon="lucide:dot" width="16" className="text-red-400 mt-1"></iconify-icon>
-                      <span><strong>Browsing history:</strong> We do not track or store your browsing history.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <iconify-icon icon="lucide:dot" width="16" className="text-red-400 mt-1"></iconify-icon>
-                      <span><strong>Analytics or tracking:</strong> We do not use any analytics, tracking pixels, or third-party tracking services.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <iconify-icon icon="lucide:dot" width="16" className="text-red-400 mt-1"></iconify-icon>
-                      <span><strong>Login credentials:</strong> We do not require or store any login information.</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Data Storage */}
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <iconify-icon icon="lucide:hard-drive" width="24" className="text-[#C39EFF]"></iconify-icon>
-                Data Storage
-              </h2>
-              <p className="text-slate-300 leading-relaxed mb-4">
-                All your data is stored <strong className="text-[#B2FFD6]">locally on your device</strong> using Chrome&apos;s local storage API. This means:
-              </p>
-              <ul className="space-y-2 text-slate-300">
-                <li className="flex items-start gap-2">
-                  <iconify-icon icon="lucide:check" width="16" className="text-emerald-400 mt-1"></iconify-icon>
-                  <span>Your data never leaves your computer</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <iconify-icon icon="lucide:check" width="16" className="text-emerald-400 mt-1"></iconify-icon>
-                  <span>We have no access to your ratings or information</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <iconify-icon icon="lucide:check" width="16" className="text-emerald-400 mt-1"></iconify-icon>
-                  <span>Your data is not transmitted to any external servers</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <iconify-icon icon="lucide:check" width="16" className="text-emerald-400 mt-1"></iconify-icon>
-                  <span>You have complete control over your data</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Third-Party Services */}
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <iconify-icon icon="lucide:globe" width="24" className="text-[#C39EFF]"></iconify-icon>
-                Third-Party Services
-              </h2>
-              <div className="p-4 rounded-lg bg-[#111019] border border-white/5">
-                <h3 className="text-lg font-semibold text-white mb-2">TMDB API</h3>
-                <p className="text-slate-300 text-sm leading-relaxed mb-2">
-                  The extension uses The Movie Database (TMDB) API to fetch trending movies for the carousel feature. When you use this feature:
-                </p>
-                <ul className="space-y-2 text-slate-300 text-sm">
-                  <li className="flex items-start gap-2">
-                    <iconify-icon icon="lucide:dot" width="16" className="text-[#B2FFD6] mt-1"></iconify-icon>
-                    <span>The extension makes requests to TMDB&apos;s public API</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <iconify-icon icon="lucide:dot" width="16" className="text-[#B2FFD6] mt-1"></iconify-icon>
-                    <span>No personal information is sent to TMDB</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <iconify-icon icon="lucide:dot" width="16" className="text-[#B2FFD6] mt-1"></iconify-icon>
-                    <span>TMDB may collect standard web request data (IP address, user agent)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <iconify-icon icon="lucide:dot" width="16" className="text-[#B2FFD6] mt-1"></iconify-icon>
-                    <span>Review TMDB&apos;s privacy policy at: <a href="https://www.themoviedb.org/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#C39EFF] hover:text-[#B2FFD6] underline">themoviedb.org/privacy-policy</a></span>
-                  </li>
-                </ul>
               </div>
             </div>
 
             {/* Permissions */}
             <div>
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <iconify-icon icon="lucide:key" width="24" className="text-[#C39EFF]"></iconify-icon>
+                <iconify-icon icon="mdi:key-variant" width="24" className="text-[#FF0000]" style={{ marginRight: '8px' }}></iconify-icon>
                 Browser Permissions
               </h2>
-              <p className="text-slate-300 leading-relaxed mb-4">
-                Movie Rating Pro requests the following permissions:
+              <p className="text-[#aaaaaa] leading-relaxed mb-4">
+                YouTube New Order requests the following permissions to function:
               </p>
               <div className="space-y-3">
-                <div className="p-4 rounded-lg bg-[#111019] border border-white/5">
+                <div className="p-4 rounded-lg bg-[#0f0f0f] border border-[#303030]">
                   <h3 className="text-sm font-semibold text-white mb-1 flex items-center gap-2">
-                    <iconify-icon icon="lucide:hard-drive" width="16" className="text-[#B2FFD6]"></iconify-icon>
+                    <iconify-icon icon="mdi:harddisk" width="16" className="text-[#FF0000]"></iconify-icon>
                     Storage
                   </h3>
-                  <p className="text-slate-400 text-sm">Used to save your ratings and settings locally on your device.</p>
+                  <p className="text-[#555555] text-sm">Used to save your layout settings locally.</p>
                 </div>
-                <div className="p-4 rounded-lg bg-[#111019] border border-white/5">
+                <div className="p-4 rounded-lg bg-[#0f0f0f] border border-[#303030]">
                   <h3 className="text-sm font-semibold text-white mb-1 flex items-center gap-2">
-                    <iconify-icon icon="lucide:tab" width="16" className="text-[#B2FFD6]"></iconify-icon>
-                    Active Tab
+                    <iconify-icon icon="mdi:tab" width="16" className="text-[#FF0000]"></iconify-icon>
+                    Active Tab & Scripting
                   </h3>
-                  <p className="text-slate-400 text-sm">Used to detect movie titles from the current page you&apos;re viewing. We only read the page title and metadata—we do not access or store page content.</p>
+                  <p className="text-[#555555] text-sm">Used to modify the DOM of the YouTube page to rearrange elements. We solely interact with `youtube.com` pages.</p>
+                </div>
+                <div className="p-4 rounded-lg bg-[#0f0f0f] border border-[#303030]">
+                  <h3 className="text-sm font-semibold text-white mb-1 flex items-center gap-2">
+                    <iconify-icon icon="mdi:web" width="16" className="text-[#FF0000]"></iconify-icon>
+                    Host Permissions (youtube.com)
+                  </h3>
+                  <p className="text-[#555555] text-sm">Required to inject the layout scripts into YouTube.</p>
                 </div>
               </div>
-            </div>
-
-            {/* Data Control */}
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <iconify-icon icon="lucide:settings" width="24" className="text-[#C39EFF]"></iconify-icon>
-                Your Data Control
-              </h2>
-              <p className="text-slate-300 leading-relaxed mb-4">
-                You have complete control over your data:
-              </p>
-              <ul className="space-y-2 text-slate-300">
-                <li className="flex items-start gap-2">
-                  <iconify-icon icon="lucide:check" width="16" className="text-emerald-400 mt-1"></iconify-icon>
-                  <span><strong>Export:</strong> You can export all your ratings to CSV format at any time</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <iconify-icon icon="lucide:check" width="16" className="text-emerald-400 mt-1"></iconify-icon>
-                  <span><strong>Delete:</strong> You can delete individual ratings or all data from within the extension</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <iconify-icon icon="lucide:check" width="16" className="text-emerald-400 mt-1"></iconify-icon>
-                  <span><strong>Uninstall:</strong> Removing the extension will delete all locally stored data</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <iconify-icon icon="lucide:check" width="16" className="text-emerald-400 mt-1"></iconify-icon>
-                  <span><strong>Clear storage:</strong> You can manually clear Chrome&apos;s local storage for the extension</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Children's Privacy */}
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <iconify-icon icon="lucide:baby" width="24" className="text-[#C39EFF]"></iconify-icon>
-                Children&apos;s Privacy
-              </h2>
-              <p className="text-slate-300 leading-relaxed">
-                Movie Rating Pro does not knowingly collect any information from children under the age of 13.
-                The extension does not require any personal information and is safe for users of all ages.
-              </p>
-            </div>
-
-            {/* Changes to Policy */}
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <iconify-icon icon="lucide:refresh-cw" width="24" className="text-[#C39EFF]"></iconify-icon>
-                Changes to This Policy
-              </h2>
-              <p className="text-slate-300 leading-relaxed">
-                We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated
-                &quot;Last Updated&quot; date. We encourage you to review this policy periodically.
-              </p>
             </div>
 
             {/* Contact */}
             <div>
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <iconify-icon icon="lucide:mail" width="24" className="text-[#C39EFF]"></iconify-icon>
+                <iconify-icon icon="mdi:email-outline" width="24" className="text-[#FF0000]" style={{ marginRight: '8px' }}></iconify-icon>
                 Contact Us
               </h2>
-              <p className="text-slate-300 leading-relaxed mb-4">
-                If you have any questions about this Privacy Policy, please contact us:
+              <p className="text-[#aaaaaa] leading-relaxed mb-4">
+                If you have any questions about this Privacy Policy, please contact us at:
               </p>
-              <div className="p-4 rounded-lg bg-gradient-to-r from-[#C39EFF]/10 to-[#B2FFD6]/10 border border-[#C39EFF]/20">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-600 to-fuchsia-600 flex items-center justify-center flex-shrink-0">
-                    <iconify-icon icon="lucide:code-2" width="20" className="text-white"></iconify-icon>
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold text-white">Devaura</div>
-                    <a
-                      href="https://devaura.co.za/#contact"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-[#C39EFF] hover:text-[#B2FFD6] transition-colors"
-                    >
-                      Visit devaura.co.za/contact
-                    </a>
-                  </div>
-                </div>
+              <div className="p-4 rounded-lg bg-[#0f0f0f] border border-[#303030]">
+                <a href="mailto:support@youtubeneworder.com" className="text-[#FF0000] hover:underline">support@youtubeneworder.com</a>
               </div>
-            </div>
-
-            {/* Summary Box */}
-            <div className="p-6 rounded-xl bg-gradient-to-br from-emerald-500/10 to-green-500/10 border border-emerald-500/20">
-              <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-                <iconify-icon icon="lucide:shield-check" width="20" className="text-emerald-400"></iconify-icon>
-                Privacy Summary
-              </h3>
-              <p className="text-slate-300 text-sm leading-relaxed">
-                <strong className="text-emerald-400">Your privacy is our priority.</strong> Movie Rating Pro stores all data locally on your device,
-                collects no personal information, uses no tracking or analytics, and gives you complete control over your data.
-                The only external service used is TMDB API for trending movies, which does not receive any of your personal information.
-              </p>
             </div>
 
           </div>
         </div>
       </section>
 
-      <Footer />
-      <PromoPopup />
+      {/* Footer */}
+      <footer className="border-t border-[#303030] bg-[#0f0f0f] py-12 mt-12">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="text-sm text-[#555]">
+            © {new Date().getFullYear()} YouTube New Order.
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

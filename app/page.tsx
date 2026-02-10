@@ -2,13 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'iconify-icon': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & { icon: string; width?: string | number; height?: string | number };
-    }
-  }
-}
+
 
 export default function Home() {
   const currentYear = new Date().getFullYear();
@@ -33,11 +27,12 @@ export default function Home() {
             <span className="font-bold text-lg tracking-tight">YouTube New Order</span>
           </div>
           <div className="flex items-center gap-6">
-            <a href="#features" className="text-sm font-medium text-[#aaaaaa] hover:text-white transition-colors">Features</a>
-            <a href="#how-it-works" className="text-sm font-medium text-[#aaaaaa] hover:text-white transition-colors">How it Works</a>
-            <Link href="https://github.com/yourusername/youtube-new-order" target="_blank" className="text-[#f1f1f1] hover:text-[#FF0000] transition-colors">
+            <Link href="/#features" className="text-sm font-medium text-[#aaaaaa] hover:text-white transition-colors">Features</Link>
+            <Link href="/how-it-works" className="text-sm font-medium text-[#aaaaaa] hover:text-white transition-colors">How it Works</Link>
+            <Link href="/vs-standard" className="text-sm font-medium text-[#aaaaaa] hover:text-white transition-colors">Compare</Link>
+            <a href="https://github.com/yourusername/youtube-new-order" target="_blank" className="text-[#f1f1f1] hover:text-[#FF0000] transition-colors">
               <iconify-icon icon="mdi:github" width="24" height="24"></iconify-icon>
-            </Link>
+            </a>
           </div>
         </div>
       </nav>
@@ -60,13 +55,13 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="h-12 px-8 rounded-full bg-[#f1f1f1] text-black font-semibold hover:bg-white hover:scale-105 transition-all flex items-center gap-2">
+            <a href="#" className="h-12 px-8 rounded-full bg-[#f1f1f1] text-black font-semibold hover:bg-white hover:scale-105 transition-all flex items-center gap-2 justify-center">
               <iconify-icon icon="logos:chrome"></iconify-icon>
               Add to Chrome
-            </button>
-            <button className="h-12 px-8 rounded-full bg-[#1f1f1f] border border-[#303030] text-[#f1f1f1] font-semibold hover:bg-[#272727] hover:border-[#FF0000] transition-all">
+            </a>
+            <a href="https://github.com/yourusername/youtube-new-order" target="_blank" className="h-12 px-8 rounded-full bg-[#1f1f1f] border border-[#303030] text-[#f1f1f1] font-semibold hover:bg-[#272727] hover:border-[#FF0000] transition-all flex items-center justify-center">
               View on GitHub
-            </button>
+            </a>
           </div>
 
           {/* Preview Image Placeholder */}
@@ -141,39 +136,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section id="how-it-works" className="py-24 border-t border-[#303030]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center gap-16">
-            <div className="flex-1">
-              <h2 className="text-3xl font-bold mb-6">How It Works</h2>
-              <div className="space-y-8">
-                <Step
-                  number="01"
-                  title="Install Extension"
-                  description="Add YouTube New Order to Chrome from the Web Store."
-                />
-                <Step
-                  number="02"
-                  title="Open YouTube"
-                  description="Navigate to any YouTube video page. The layout swaps automatically."
-                />
-                <Step
-                  number="03"
-                  title="Customize"
-                  description="Use the popup menu efficiently to toggle features like Grid View or Volume Boost."
-                />
-              </div>
-            </div>
-            <div className="flex-1 bg-[#1f1f1f] border border-[#303030] rounded-2xl p-8 aspect-square flex items-center justify-center">
-              <div className="text-center">
-                <iconify-icon icon="mdi:cog" width="64" height="64" style={{ color: '#3ea6ff' }}></iconify-icon>
-                <p className="mt-4 font-mono text-sm text-[#aaaaaa]">No complex setup required.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* CTA */}
       <section className="py-24 relative overflow-hidden">
@@ -200,9 +163,9 @@ export default function Home() {
             © {currentYear} YouTube New Order. Not affiliated with YouTube or Google.
           </div>
           <div className="flex gap-6">
-            <a href="#" className="text-[#aaaaaa] hover:text-white transition-colors text-sm">Privacy</a>
-            <a href="#" className="text-[#aaaaaa] hover:text-white transition-colors text-sm">Terms</a>
-            <a href="#" className="text-[#aaaaaa] hover:text-white transition-colors text-sm">Support</a>
+            <Link href="/privacy-policy" className="text-[#aaaaaa] hover:text-white transition-colors text-sm">Privacy</Link>
+            <Link href="/tos" className="text-[#aaaaaa] hover:text-white transition-colors text-sm">Terms</Link>
+            <a href="mailto:support@youtubeneworder.com" className="text-[#aaaaaa] hover:text-white transition-colors text-sm">Support</a>
           </div>
         </div>
       </footer>
@@ -222,14 +185,4 @@ function FeatureCard({ icon, title, description }: { icon: string, title: string
   );
 }
 
-function Step({ number, title, description }: { number: string, title: string, description: string }) {
-  return (
-    <div className="flex gap-4">
-      <span className="text-2xl font-bold text-[#3ea6ff] font-mono">{number}</span>
-      <div>
-        <h3 className="text-lg font-bold mb-1 text-[#f1f1f1]">{title}</h3>
-        <p className="text-[#aaaaaa]">{description}</p>
-      </div>
-    </div>
-  );
-}
+

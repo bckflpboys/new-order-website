@@ -3,18 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'iconify-icon': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
-        icon: string;
-        width?: string;
-        'stroke-width'?: string;
-        fill?: string;
-      };
-    }
-  }
-}
+
 
 interface NavbarProps {
   isBannerVisible: boolean;
