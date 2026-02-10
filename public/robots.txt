@@ -1,0 +1,53 @@
+# robots.txt for Movie Rating Pro
+# Last updated: 2025-12-31
+
+# Default rule for all web crawlers
+User-agent: *
+Allow: /
+
+# Disallow access to admin and API routes
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /dashboard/
+Disallow: /account/
+
+# Disallow query strings and search
+Disallow: /*?*
+Disallow: /search
+
+# Allow access to important assets
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Block common CMS and framework paths (just in case)
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+
+# Block non-essential file types
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.env
+Disallow: /*.git
+
+# Sitemap location
+Sitemap: https://movie-pro.32d.one/sitemap.xml
+
+# Crawl-delay: 10  # Uncomment if you experience high server load
+
+# Additional search engine instructions
+# Google-specific
+User-agent: Googlebot
+Allow: /*.css$
+Allow: /*.js$
+
+# Bing-specific
+User-agent: bingbot
+Crawl-delay: 10

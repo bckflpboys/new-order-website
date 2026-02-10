@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* YouTube Colors */
+  --yt-red: #FF0000;
+  --yt-dark-bg: #0f0f0f;
+  --yt-darker-bg: #0a0a0a;
+  --yt-card-bg: #1f1f1f;
+  --yt-border: #303030;
+  --yt-text: #f1f1f1;
+  --yt-text-secondary: #aaaaaa;
+  --yt-hover: #272727;
+  --accent-blue: #3ea6ff;
+  --accent-green: #00d26a;
+
+  --background: var(--yt-dark-bg);
+  --foreground: var(--yt-text);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--yt-dark-bg);
+    --foreground: var(--yt-text);
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Roboto', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar matching YouTube */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--yt-dark-bg); }
+::-webkit-scrollbar-thumb { background: #717171; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #a0a0a0; }
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #FF0000 0%, #cc0000 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-grid {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+}
+
